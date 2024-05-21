@@ -25,11 +25,21 @@ modules:
         properties:
           srv-url: ${default-url}
     requires:
-      - name: aiusecase-logging
+      - name: aiusecase-auth
+      - name: aiusecase-dest
 
 resources:
-  - name: aiusecase-logging
+  - name: aiusecase-auth
     type: org.cloudfoundry.managed-service
     parameters:
-      service: application-logs
-      service-plan: standard
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: aiusecase-uaa
+        tenant-mode: dedicated
+  - name: aiusecase-dest
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite

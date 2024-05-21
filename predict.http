@@ -5,6 +5,6 @@ POST {{server}}/odata/v4/predict/Predict HTTP/1.1
 Content-Type:  application/json
 
 {
-  "description": "B-33, Lajpat Nagar part 1, Ist Floor"
+  "description": "Comprehensive Leak Mitigation"
 }
 

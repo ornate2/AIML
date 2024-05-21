@@ -6,7 +6,9 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.15.0",
     "@sap/cds": "^7",
+    "@sap/xssec": "^3",
     "express": "^4"
   },
   "devDependencies": {
@@ -17,5 +19,17 @@
   },
   "scripts": {
     "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "Predict_API": {
+        "kind": "odata",
+        "credentials": {
+          "destination": "Predict_API",
+          "path": "/v2/inference/deployments/dc04ce0011ad8852/v2"
+        }
+      },
+      "auth": "xsuaa"
+    }
   }
 }
